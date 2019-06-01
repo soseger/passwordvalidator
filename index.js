@@ -14,23 +14,22 @@ function hasUpperChar (string) {
     return string !== string.toLowerCase();
 }
 
+function hasNumber (string) {
+    return string.match(/[0-9]/);
+}
+
+function hasEightChars (string) {
+    return string.length > 7
+}
+
  function password (password) {
-     if (!password) {
-         return false;
-     }
-     if (password.length < 8) {
-         return false;
-     }
-     if (!password.match(/[0-9]/)) {
-        return false;
-     }
-     if (!hasUpperChar(password)) {
-         return false;
-     }
-     if (!hasSmallChar(password)) {
-        return false;
-    }
-     return true;
+    return Boolean(
+        password 
+        && hasEightChars(password) 
+        && hasNumber(password) 
+        && hasSmallChar(password) 
+        && hasUpperChar(password)
+    );
  }
 
 module.exports = password;
