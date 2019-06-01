@@ -6,6 +6,8 @@
  * The password needs to be at least 8 characters long.
  */
 
+const MIN_LENGTH = 8;
+
 function hasSmallChar (string) {
     return string !== string.toUpperCase();
 }
@@ -19,7 +21,7 @@ function hasNumber (string) {
 }
 
 function hasEightChars (string) {
-    return string.length > 7
+    return string.length >= MIN_LENGTH;
 }
 
  function password (password) {
