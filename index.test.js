@@ -44,6 +44,11 @@ describe('password', () => {
             const validPassword = 'Öåäö1234';
             expect(password(validPassword)).toEqual(true);
         });
+
+        it('accepts other special characters as well', () => {
+            const validPassword = 'Šûûû1234';
+            expect(password(validPassword)).toEqual(true);
+        })
     });
 
     describe('When password is not given', () => {

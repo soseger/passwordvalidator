@@ -4,9 +4,16 @@
  * There needs to be at least 1 lowercase letter.
  * There needs to be at least 1 number.
  * The password needs to be at least 8 characters long.
- * 
- * @param {string} password 
  */
+
+function hasSmallChar (string) {
+    return string !== string.toUpperCase();
+}
+
+function hasUpperChar (string) {
+    return string !== string.toLowerCase();
+}
+
  function password (password) {
      if (!password) {
          return false;
@@ -17,10 +24,10 @@
      if (!password.match(/[0-9]/)) {
         return false;
      }
-     if (!password.match(/[A-ZÅÄÖ]/)) {
+     if (!hasUpperChar(password)) {
          return false;
      }
-     if (!password.match(/[a-zåäö]/)) {
+     if (!hasSmallChar(password)) {
         return false;
     }
      return true;
